@@ -1,0 +1,56 @@
+/* Cadence "Koi Pond" design tokens. Source of truth for colors, type and the pixel utilities used in design/*.dc.html. */
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=Silkscreen&family=Atkinson+Hyperlegible:wght@400;700&display=swap");
+
+:root {
+  /* water (surfaces, darkest to lightest) */
+  --pond-deep: #0B1F26;      /* page ground, nav bars, inset wells */
+  --pond-base: #0F2B33;      /* app background */
+  --pond-shallow: #163C46;   /* cards */
+  --pond-reed: #1F5560;      /* borders, selected chip fill, dividers */
+
+  /* accents */
+  --teal: #4FE0C1;           /* primary action, OWNED, focus */
+  --teal-shade: #2E9C88;     /* teal's pixel shadow */
+  --teal-light: #9FF2DF;     /* teal text on dark, ripples */
+  --lily: #8AD47A;           /* PARTIAL, healthy/green */
+  --lily-shade: #5FAF5A;
+  --koi: #F4A640;            /* NEEDS YOU, LOSSY: rare on purpose */
+  --koi-shade: #C47A22;
+  --alert-red: #E5603C;      /* peak LED, VU red zone only */
+
+  /* text */
+  --foam: #DDF3EC;           /* primary text */
+  --mist: #B9D8D1;           /* secondary text */
+  --reed-text: #8FB8B0;      /* tertiary text / labels (>= 4.5:1 on pond-base) */
+
+  /* type */
+  --font-display: "Pixelify Sans", monospace;   /* names, headings, numbers, buttons */
+  --font-label: "Silkscreen", monospace;        /* tiny caps labels, badges, chips */
+  --font-body: "Atkinson Hyperlegible", sans-serif;
+
+  /* sizing */
+  --tap: 44px;               /* minimum touch target; primary buttons 48px */
+}
+
+body { margin: 0; background: var(--pond-base); color: var(--foam); font-family: var(--font-body); }
+
+/* 2-step pixel corner on any box */
+.notch {
+  clip-path: polygon(0 4px,2px 4px,2px 2px,4px 2px,4px 0,calc(100% - 4px) 0,calc(100% - 4px) 2px,calc(100% - 2px) 2px,
+    calc(100% - 2px) 4px,100% 4px,100% calc(100% - 4px),calc(100% - 2px) calc(100% - 4px),calc(100% - 2px) calc(100% - 2px),
+    calc(100% - 4px) calc(100% - 2px),calc(100% - 4px) 100%,4px 100%,4px calc(100% - 2px),2px calc(100% - 2px),
+    2px calc(100% - 4px),0 calc(100% - 4px));
+}
+/* 16-bit bevel: light top-left, dark bottom-right */
+.bevel { box-shadow: inset 2px 2px 0 rgba(255,255,255,.14), inset -2px -2px 0 rgba(0,0,0,.28); }
+/* button press: bevel flips and the button moves 2px */
+.press:active { transform: translate(2px,2px); box-shadow: inset -2px -2px 0 rgba(255,255,255,.12), inset 2px 2px 0 rgba(0,0,0,.28); }
+/* water dither on large surfaces */
+.dither { background-image: repeating-conic-gradient(rgba(159,242,223,.035) 0 25%, transparent 0 50%); background-size: 4px 4px; }
+/* light sweep on in-progress badges */
+.glint { background-image: linear-gradient(90deg,transparent 0 40%,rgba(255,255,255,.35) 40% 46%,transparent 46% 100%);
+  background-size: 300% 100%; animation: glint 3.2s steps(12) infinite; }
+@keyframes glint { from { background-position: 120% 0 } to { background-position: -20% 0 } }
+svg.px { shape-rendering: crispEdges; }
+
+@media (prefers-reduced-motion: reduce) { .glint { animation: none } }

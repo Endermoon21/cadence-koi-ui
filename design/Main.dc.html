@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cadence koi pond style tile</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=Silkscreen&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B1F26}
+a{color:#4FE0C1}a:hover{color:#9FF2DF}
+.notch{clip-path:polygon(0 4px,2px 4px,2px 2px,4px 2px,4px 0,calc(100% - 4px) 0,calc(100% - 4px) 2px,calc(100% - 2px) 2px,calc(100% - 2px) 4px,100% 4px,100% calc(100% - 4px),calc(100% - 2px) calc(100% - 4px),calc(100% - 2px) calc(100% - 2px),calc(100% - 4px) calc(100% - 2px),calc(100% - 4px) 100%,4px 100%,4px calc(100% - 2px),2px calc(100% - 2px),2px calc(100% - 4px),0 calc(100% - 4px))}
+.dither{background-image:repeating-conic-gradient(rgba(159,242,223,.035) 0 25%,transparent 0 50%);background-size:4px 4px}
+.bevel{box-shadow:inset 2px 2px 0 rgba(159,242,223,.12),inset -2px -2px 0 rgba(0,0,0,.28)}
+.glint{background-image:linear-gradient(90deg,transparent 0 40%,rgba(255,255,255,.35) 40% 46%,transparent 46% 100%);background-size:300% 100%;animation:glint 3.2s steps(12) infinite}
+@keyframes glint{from{background-position:120% 0}to{background-position:-20% 0}}
+.press:active{transform:translate(2px,2px);box-shadow:inset -2px -2px 0 rgba(159,242,223,.12),inset 2px 2px 0 rgba(0,0,0,.28)}
+@media (prefers-reduced-motion: reduce){.glint{animation:none}}
+svg.px{shape-rendering:crispEdges}
+</style>
+</helmet>
+<div class="dither" style="width: 1280px; height: 1040px; box-sizing: border-box; padding: 56px 64px; background-color: #0F2B33; color: #DDF3EC; font-family: 'Atkinson Hyperlegible', sans-serif; display: flex; flex-direction: column; gap: 32px; position: relative; overflow: hidden">
+
+<div style="position: absolute; right: 40px; top: 28px; width: 500px; height: 200px" aria-hidden="true">
+<div style="position: absolute; left: 60px; top: 70px"><dc-import name="Ripple" scale="{{k5}}" offset="{{zero}}" hint-size="120px,60px"></dc-import></div>
+<div style="position: absolute; left: 300px; top: 140px"><dc-import name="Ripple" scale="{{k3}}" offset="{{rOff}}" hint-size="72px,36px"></dc-import></div>
+<div style="position: absolute; right: 0; top: 70px"><dc-import name="Lily" scale="{{k4}}" hint-size="96px,100px"></dc-import></div>
+<div style="position: absolute; left: 0; top: 0"><dc-import name="Koi" scale="{{k3}}" variant="kohaku" swim="{{yes}}" hint-size="156px,84px"></dc-import></div>
+<div style="position: absolute; left: 200px; top: 112px; transform: scaleX(-1)"><dc-import name="Koi" scale="{{k2}}" variant="yamabuki" swim="{{yes}}" hint-size="104px,56px"></dc-import></div>
+</div>
+
+<header style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Silkscreen', monospace; font-size: 14px; letter-spacing: 2px; color: #8FB8B0">CADENCE · STYLE TILE · KOI POND</span>
+<h1 style="margin: 0; font-family: 'Pixelify Sans', monospace; font-size: 72px; font-weight: 700; line-height: 1; color: {{accent}}; text-shadow: 4px 4px 0 #0B1F26">Cadence</h1>
+<p style="margin: 0; font-size: 20px; max-width: 600px; color: #B9D8D1; line-height: 1.5">A quiet pond for your music. Deep water, lily-pad greens, one gold koi for the things that need you. 16-bit sprites that move: wagging tails, spinning records, a needle that dances.</p>
+</header>
+
+<section style="display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Silkscreen', monospace; font-size: 16px; font-weight: 400; letter-spacing: 2px; color: #8FB8B0">WATER &amp; LIGHT</h2>
+<div style="display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 6px"><div class="notch" style="height: 60px; background: #0B1F26; outline: 2px solid #1F5560; outline-offset: -2px"></div><span style="font-family: 'Silkscreen', monospace; font-size: 12px">DEEP</span><span style="font-size: 13px; color: #8FB8B0">#0B1F26 ground</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><div class="notch" style="height: 60px; background: #0F2B33"></div><span style="font-family: 'Silkscreen', monospace; font-size: 12px">POND</span><span style="font-size: 13px; color: #8FB8B0">#0F2B33 base</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><div class="notch bevel" style="height: 60px; background: #163C46"></div><span style="font-family: 'Silkscreen', monospace; font-size: 12px">SHALLOW</span><span style="font-size: 13px; color: #8FB8B0">#163C46 card</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><div class="notch" style="height: 60px; background: #1F5560"></div><span style="font-family: 'Silkscreen', monospace; font-size: 12px">REED</span><span style="font-size: 13px; color: #8FB8B0">#1F5560 edge</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><div class="notch bevel" style="height: 60px; background: {{accent}}"></div><span style="font-family: 'Silkscreen', monospace; font-size: 12px">TEAL</span><span style="font-size: 13px; color: #8FB8B0">primary glow</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><div class="notch bevel" style="height: 60px; background: #8AD47A"></div><span style="font-family: 'Silkscreen', monospace; font-size: 12px">LILY</span><span style="font-size: 13px; color: #8FB8B0">#8AD47A owned</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><div class="notch bevel" style="height: 60px; background: #F4A640"></div><span style="font-family: 'Silkscreen', monospace; font-size: 12px">KOI</span><span style="font-size: 13px; color: #8FB8B0">#F4A640 needs you</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><div class="notch" style="height: 60px; background: #DDF3EC"></div><span style="font-family: 'Silkscreen', monospace; font-size: 12px">FOAM</span><span style="font-size: 13px; color: #8FB8B0">#DDF3EC text</span></div>
+</div>
+</section>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px">
+
+<section style="display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Silkscreen', monospace; font-size: 16px; font-weight: 400; letter-spacing: 2px; color: #8FB8B0">THE KOI · 48×24 · TAIL WAG + FIN FLUTTER</h2>
+<div class="notch bevel" style="background: #163C46; padding: 18px 16px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; align-items: end">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px"><dc-import name="Koi" scale="{{k2}}" variant="kohaku" hint-size="104px,56px"></dc-import><span style="font-family: 'Silkscreen', monospace; font-size: 11px; color: #B9D8D1">KOHAKU · TIDAL</span></div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px"><dc-import name="Koi" scale="{{k2}}" variant="yamabuki" hint-size="104px,56px"></dc-import><span style="font-family: 'Silkscreen', monospace; font-size: 11px; color: #B9D8D1">YAMABUKI · ORPHEUS</span></div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px"><dc-import name="Koi" scale="{{k2}}" variant="showa" hint-size="104px,56px"></dc-import><span style="font-family: 'Silkscreen', monospace; font-size: 11px; color: #B9D8D1">SHOWA · ALERT</span></div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px"><dc-import name="Koi" scale="{{k2}}" variant="kumonryu" hint-size="104px,56px"></dc-import><span style="font-family: 'Silkscreen', monospace; font-size: 11px; color: #B9D8D1">KUMONRYU · SOULSEEK</span></div>
+</div>
+<p style="margin: 0; font-size: 14px; color: #8FB8B0; line-height: 1.5">Selective outline, 4-tone shading, dithered belly, scale texture, barbels. The tail wags in 5 stepped frames, the fins flutter out of phase, and swimming koi drift.</p>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Silkscreen', monospace; font-size: 16px; font-weight: 400; letter-spacing: 2px; color: #8FB8B0">HI-FI SPRITES · ALL ANIMATED</h2>
+<div class="notch bevel" style="background: #163C46; padding: 18px 16px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; align-items: end">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px"><dc-import name="Vinyl" scale="{{k3}}" hint-size="120px,102px"></dc-import><span style="font-family: 'Silkscreen', monospace; font-size: 11px; color: #B9D8D1">SPINS WHILE FETCHING</span></div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px"><dc-import name="VU" scale="{{k3}}" hint-size="120px,84px"></dc-import><span style="font-family: 'Silkscreen', monospace; font-size: 11px; color: #B9D8D1">GATE LOAD · PEAK LED</span></div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px"><dc-import name="Tape" scale="{{k3}}" hint-size="120px,78px"></dc-import><span style="font-family: 'Silkscreen', monospace; font-size: 11px; color: #B9D8D1">CARD SYNC REELS</span></div>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Silkscreen', monospace; font-size: 16px; font-weight: 400; letter-spacing: 2px; color: #8FB8B0">STATE BADGES</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<span class="notch bevel" style="font-family: 'Silkscreen', monospace; font-size: 12px; padding: 7px 12px; background: #4FE0C1; color: #0B1F26">OWNED</span>
+<span class="notch bevel" style="font-family: 'Silkscreen', monospace; font-size: 12px; padding: 7px 12px; background: #8AD47A; color: #0B1F26">PARTIAL 7/9</span>
+<span class="notch" style="font-family: 'Silkscreen', monospace; font-size: 12px; padding: 7px 12px; background: transparent; color: #DDF3EC; outline: 2px dashed #8FB8B0; outline-offset: -2px">MISSING</span>
+<span class="notch bevel glint" style="font-family: 'Silkscreen', monospace; font-size: 12px; padding: 7px 12px; background-color: #1F5560; color: #9FF2DF">FETCHING</span>
+<span class="notch bevel" style="font-family: 'Silkscreen', monospace; font-size: 12px; padding: 7px 12px; background: #F4A640; color: #0B1F26">LOSSY · AAC</span>
+<span class="notch bevel" style="font-family: 'Silkscreen', monospace; font-size: 12px; padding: 7px 12px; background: #DDF3EC; color: #0B1F26">ON CARD</span>
+</div>
+<p style="margin: 0; font-size: 14px; color: #8FB8B0; line-height: 1.5">Every badge carries a word, never colour alone. FETCHING has a light glint sweeping across. Gold only marks what needs you.</p>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Silkscreen', monospace; font-size: 16px; font-weight: 400; letter-spacing: 2px; color: #8FB8B0">CONTROLS</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+<button class="notch bevel press" style="font-family: 'Pixelify Sans', monospace; font-size: 18px; font-weight: 600; min-height: 48px; padding: 0 22px; border: 0; background: {{accent}}; color: #0B1F26; cursor: pointer">Grab</button>
+<button class="notch bevel press" style="font-family: 'Pixelify Sans', monospace; font-size: 18px; min-height: 48px; padding: 0 22px; border: 0; background: #163C46; color: #DDF3EC; cursor: pointer">Ignore</button>
+<div role="group" aria-label="Destination" style="display: flex; gap: 6px">
+<button aria-pressed="true" class="notch" style="font-family: 'Silkscreen', monospace; font-size: 12px; min-height: 44px; padding: 0 14px; border: 0; background: #1F5560; color: #9FF2DF; outline: 2px solid #4FE0C1; outline-offset: -2px">SERVER</button>
+<button aria-pressed="false" class="notch bevel press" style="font-family: 'Silkscreen', monospace; font-size: 12px; min-height: 44px; padding: 0 14px; border: 0; background: #163C46; color: #B9D8D1">FIIO</button>
+<button aria-pressed="false" class="notch bevel press" style="font-family: 'Silkscreen', monospace; font-size: 12px; min-height: 44px; padding: 0 14px; border: 0; background: #163C46; color: #B9D8D1">BOTH</button>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'Silkscreen', monospace; font-size: 11px; color: #8FB8B0">PROGRESS · THE KOI SWIMS ACROSS, RIPPLES BEHIND</span>
+<div style="position: relative; height: 26px; background: #0B1F26; display: flex; padding: 5px; box-sizing: border-box" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" aria-label="Download progress">
+<div style="width: 62%; background: repeating-linear-gradient(90deg,#4FE0C1 0 8px,#2E9C88 8px 10px,transparent 10px 12px)"></div>
+<div style="position: absolute; left: calc(62% - 96px); top: -12px"><dc-import name="Ripple" scale="{{k2}}" hint-size="48px,24px"></dc-import></div>
+<div style="position: absolute; left: calc(62% - 44px); top: -2px"><dc-import name="Koi" scale="{{k1}}" variant="kohaku" hint-size="52px,28px"></dc-import></div>
+</div>
+</div>
+</section>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#4FE0C1","options":["#4FE0C1","#3CCB9B","#5BC8E0"]},"$preview":{"width":1280,"height":1040}}'>
+class Component extends DCLogic {
+renderVals() {
+return { accent: this.props.accent ?? '#4FE0C1', k1: 1, k2: 2, k3: 3, k4: 4, k5: 5, zero: 0, rOff: 1.2, yes: true };
+}
+}
+</script>
+</body>
+</html>

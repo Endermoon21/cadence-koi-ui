@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>VU meter sprite</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.vu-needle{transform-origin:20.5px 19px;animation:vuBounce 2.4s steps(3) infinite}
+.vu-rest{transform-origin:20.5px 19px;transform:rotate(-50deg)}
+.vu-led{animation:vuLed 2.4s step-end infinite}
+.vu-led-off{opacity:0.15}
+@keyframes vuBounce{0%{transform:rotate(-42deg)}10%{transform:rotate(-6deg)}18%{transform:rotate(-26deg)}30%{transform:rotate(14deg)}38%{transform:rotate(-8deg)}50%{transform:rotate(38deg)}58%{transform:rotate(4deg)}70%{transform:rotate(-20deg)}80%{transform:rotate(12deg)}90%{transform:rotate(-30deg)}100%{transform:rotate(-42deg)}}
+@keyframes vuLed{0%{opacity:.15}46%{opacity:1}58%{opacity:.15}}
+@media (prefers-reduced-motion: reduce){.vu-needle{animation:none;transform:rotate(-10deg)}.vu-led{animation:none}}
+</style>
+</helmet>
+<div style="width: {{w}}px; height: {{h}}px; line-height: 0">
+<svg width="{{w}}" height="{{h}}" viewBox="0 0 40 28" role="img" aria-label="{{label}}" style="shape-rendering: crispEdges">
+<rect x="0" y="0" width="40" height="28" fill="#1F5560"/>
+<rect x="0" y="0" width="40" height="1" fill="#3A8494"/>
+<rect x="0" y="0" width="1" height="28" fill="#2E7080"/>
+<rect x="0" y="27" width="40" height="1" fill="#0F3540"/>
+<rect x="39" y="0" width="1" height="28" fill="#0F3540"/>
+<rect x="2" y="2" width="36" height="19" fill="#0B1F26"/>
+<rect x="3" y="3" width="34" height="17" fill="#F4DFA8"/>
+<rect x="3" y="3" width="34" height="1" fill="#FFF0C8"/>
+<rect x="5" y="4" width="30" height="1" fill="#FFF0C8" opacity="0.6"/>
+<rect x="3" y="18" width="34" height="2" fill="#E2C784"/>
+<rect x="3" y="17" width="34" height="1" fill="#E2C784" opacity="0.5"/>
+<g fill="#14232A"><rect x="10" y="12" width="1" height="2"/><rect x="11" y="10" width="1" height="2"/><rect x="12" y="10" width="1" height="1"/><rect x="13" y="9" width="2" height="1"/><rect x="15" y="8" width="2" height="1"/><rect x="17" y="7" width="8" height="1"/><rect x="11" y="14" width="1" height="1"/><rect x="15" y="9" width="1" height="1"/><rect x="20" y="8" width="1" height="1"/><rect x="24" y="9" width="1" height="1"/></g>
+<g fill="#D9452B"><rect x="25" y="8" width="1" height="1"/><rect x="26" y="9" width="2" height="1"/><rect x="28" y="10" width="1" height="2"/><rect x="29" y="12" width="1" height="2"/><rect x="26" y="10" width="2" height="1"/><rect x="28" y="12" width="1" height="1"/></g>
+<g fill="#14232A"><rect x="17" y="13" width="1" height="2"/><rect x="18" y="15" width="1" height="1"/><rect x="19" y="13" width="1" height="2"/><rect x="21" y="13" width="1" height="3"/><rect x="22" y="15" width="1" height="1"/><rect x="23" y="13" width="1" height="3"/><rect x="7" y="13" width="2" height="1"/></g>
+<g fill="#D9452B"><rect x="31" y="13" width="3" height="1"/><rect x="32" y="12" width="1" height="3"/></g>
+<g class="{{needleClass}}">
+<rect x="21" y="9" width="1" height="10" fill="#06141A" opacity="0.18"/>
+<rect x="20" y="8" width="1" height="11" fill="#14232A"/>
+<rect x="20" y="8" width="1" height="2" fill="#D9452B"/>
+</g>
+<rect x="15" y="18" width="11" height="2" fill="#1C2A30"/>
+<rect x="15" y="18" width="11" height="1" fill="#33464D"/>
+<rect x="19" y="18" width="3" height="1" fill="#5E7A82"/>
+<rect x="2" y="22" width="36" height="4" fill="#163C46"/>
+<rect x="2" y="22" width="36" height="1" fill="#1F5560"/>
+<rect x="5" y="23" width="3" height="3" fill="#8FB8B0"/>
+<rect x="5" y="23" width="1" height="1" fill="#DDF3EC"/>
+<rect x="7" y="25" width="1" height="1" fill="#5D8580"/>
+<rect x="10" y="23" width="3" height="3" fill="#8FB8B0"/>
+<rect x="10" y="23" width="1" height="1" fill="#DDF3EC"/>
+<rect x="12" y="25" width="1" height="1" fill="#5D8580"/>
+<rect x="28" y="24" width="2" height="1" fill="#4FE0C1"/>
+<rect x="32" y="24" width="2" height="1" fill="#E5603C" class="{{ledClass}}"/>
+</svg>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"scale":{"editor":"int","default":4,"min":1,"max":10},"active":{"editor":"boolean","default":true},"$preview":{"width":160,"height":112}}'>
+class Component extends DCLogic {
+renderVals() {
+const s = this.props.scale ?? 4;
+const active = this.props.active ?? true;
+return {
+w: 40 * s,
+h: 28 * s,
+needleClass: active ? 'vu-needle' : 'vu-rest',
+ledClass: active ? 'vu-led' : 'vu-led-off',
+label: active ? 'VU meter bouncing' : 'VU meter at rest'
+};
+}
+}
+</script>
+</body>
+</html>

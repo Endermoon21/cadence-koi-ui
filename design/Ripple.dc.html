@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ripple sprite</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.rip-f{opacity:0;animation:ripFrame 2.4s step-end infinite}
+.rip-f2{animation-delay:.4s}
+.rip-f3{animation-delay:.8s}
+.rip-static .rip-f{animation:none}
+.rip-static .rip-f2{opacity:1}
+@keyframes ripFrame{0%{opacity:1}16.66%{opacity:0}100%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.rip-f{animation:none}.rip-f2{opacity:1}}
+</style>
+</helmet>
+<div class="{{wrapClass}}" style="width: {{w}}px; height: {{h}}px; line-height: 0; animation-delay: {{delay}}">
+<svg width="{{w}}" height="{{h}}" viewBox="0 0 24 12" aria-hidden="true" style="shape-rendering: crispEdges">
+<g class="rip-f" fill="{{color}}" opacity="0.95" style="animation-delay: {{delay}}"><rect x="10" y="5" width="4" height="1"/><rect x="9" y="6" width="1" height="1"/><rect x="14" y="6" width="1" height="1"/><rect x="10" y="7" width="4" height="1"/></g>
+<g class="rip-f rip-f2" fill="{{color}}" style="animation-delay: {{delay2}}"><g opacity="0.7"><rect x="8" y="3" width="8" height="1"/><rect x="6" y="4" width="2" height="1"/><rect x="16" y="4" width="2" height="1"/><rect x="5" y="5" width="1" height="2"/><rect x="18" y="5" width="1" height="2"/><rect x="6" y="7" width="2" height="1"/><rect x="16" y="7" width="2" height="1"/><rect x="8" y="8" width="8" height="1"/></g><rect x="11" y="6" width="2" height="1" opacity="0.35"/></g>
+<g class="rip-f rip-f3" fill="{{color}}" style="animation-delay: {{delay3}}"><g opacity="0.35"><rect x="6" y="1" width="12" height="1"/><rect x="3" y="2" width="3" height="1"/><rect x="18" y="2" width="3" height="1"/><rect x="2" y="3" width="1" height="2"/><rect x="21" y="3" width="1" height="2"/><rect x="1" y="5" width="1" height="2"/><rect x="22" y="5" width="1" height="2"/><rect x="2" y="7" width="1" height="2"/><rect x="21" y="7" width="1" height="2"/><rect x="3" y="9" width="3" height="1"/><rect x="18" y="9" width="3" height="1"/><rect x="6" y="10" width="12" height="1"/></g><g opacity="0.2"><rect x="9" y="5" width="6" height="1"/><rect x="9" y="7" width="6" height="1"/></g></g>
+</svg>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"scale":{"editor":"int","default":4,"min":1,"max":10},"color":{"editor":"color","default":"#9FF2DF","options":["#9FF2DF","#DDF3EC","#8AD47A"]},"offset":{"editor":"float","default":0,"min":0,"max":2.4,"step":0.2,"unit":"s"},"animate":{"editor":"boolean","default":true},"$preview":{"width":96,"height":48}}'>
+class Component extends DCLogic {
+renderVals() {
+const s = this.props.scale ?? 4;
+const o = this.props.offset ?? 0;
+return {
+w: 24 * s,
+h: 12 * s,
+color: this.props.color ?? '#9FF2DF',
+delay: (-o) + 's',
+delay2: (0.4 - o) + 's',
+delay3: (0.8 - o) + 's',
+wrapClass: (this.props.animate ?? true) ? '' : 'rip-static'
+};
+}
+}
+</script>
+</body>
+</html>

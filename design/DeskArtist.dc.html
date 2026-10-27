@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cadence desktop artist</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=Silkscreen&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B1F26}
+a{color:#4FE0C1}a:hover{color:#9FF2DF}
+.notch{clip-path:polygon(0 4px,2px 4px,2px 2px,4px 2px,4px 0,calc(100% - 4px) 0,calc(100% - 4px) 2px,calc(100% - 2px) 2px,calc(100% - 2px) 4px,100% 4px,100% calc(100% - 4px),calc(100% - 2px) calc(100% - 4px),calc(100% - 2px) calc(100% - 2px),calc(100% - 4px) calc(100% - 2px),calc(100% - 4px) 100%,4px 100%,4px calc(100% - 2px),2px calc(100% - 2px),2px calc(100% - 4px),0 calc(100% - 4px))}
+.bevel{box-shadow:inset 2px 2px 0 rgba(255,255,255,.14),inset -2px -2px 0 rgba(0,0,0,.28)}
+.dither{background-image:repeating-conic-gradient(rgba(159,242,223,.035) 0 25%,transparent 0 50%);background-size:4px 4px}
+.cover{background-image:repeating-conic-gradient(rgba(11,31,38,.35) 0 25%,transparent 0 50%);background-size:8px 8px}
+svg.px{shape-rendering:crispEdges}
+.navlink{min-height:44px;display:flex;align-items:center;gap:12px;padding:0 12px;text-decoration:none;color:#B9D8D1;font-family:'Pixelify Sans',monospace;font-size:17px}
+.navlink:hover{background:#163C46;color:#DDF3EC}
+.trk{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:10px;align-items:center;min-height:44px;padding:0 10px;font-size:14px;border-bottom:2px solid #163C46}
+</style>
+</helmet>
+<div class="dither" style="min-height: 1080px; box-sizing: border-box; background-color: #0F2B33; color: #DDF3EC; font-family: 'Atkinson Hyperlegible', sans-serif; display: flex; flex-wrap: wrap">
+
+<nav aria-label="Main" style="flex: 1 1 220px; max-width: 260px; min-width: 200px; box-sizing: border-box; background: #0B1F26; border-right: 2px solid #1F5560; padding: 24px 14px; display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; align-items: center; gap: 10px; padding: 0 6px">
+<dc-import name="Koi" scale="{{k1}}" variant="kohaku" hint-size="52px,28px"></dc-import>
+<span style="font-family: 'Pixelify Sans', monospace; font-size: 26px; font-weight: 700; color: #4FE0C1">Cadence</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<a href="DeskHome.dc.html" class="navlink notch">Inbox</a>
+<a href="DeskLibrary.dc.html" aria-current="page" class="navlink notch" style="background: #1F5560; color: #9FF2DF">Library</a>
+<a href="#add" class="navlink notch">Add</a>
+<a href="#activity" class="navlink notch">Activity</a>
+<a href="#fiio" class="navlink notch">FiiO card</a>
+<a href="#settings" class="navlink notch">Settings</a>
+</div>
+</nav>
+
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column">
+
+<header style="position: relative; min-height: 220px; overflow: hidden; background: #0B1F26; border-bottom: 2px solid #1F5560; display: flex; align-items: flex-end">
+<svg class="px" width="100%" height="220" viewBox="0 0 300 44" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position: absolute; inset: 0"><rect x="0" y="0" width="300" height="44" fill="#0F2B33"/><rect x="30" y="8" width="16" height="1" fill="#16404A"/><rect x="120" y="5" width="12" height="1" fill="#16404A"/><rect x="200" y="14" width="18" height="1" fill="#16404A"/><rect x="246" y="6" width="10" height="1" fill="#5FAF5A"/><rect x="244" y="7" width="14" height="6" fill="#5FAF5A"/><rect x="246" y="13" width="10" height="1" fill="#3F8A43"/><rect x="250" y="6" width="1" height="5" fill="#0F2B33"/><rect x="246" y="8" width="3" height="1" fill="#8AD47A"/><rect x="272" y="18" width="6" height="1" fill="#5FAF5A"/><rect x="271" y="19" width="8" height="3" fill="#5FAF5A"/><rect x="272" y="22" width="6" height="1" fill="#3F8A43"/><rect x="0" y="28" width="300" height="16" fill="#0B1F26" fill-opacity="0.6"/></svg>
+<div aria-hidden="true" style="position: absolute; left: 43%; top: 70px"><dc-import name="Ripple" scale="{{k5}}" hint-size="120px,60px"></dc-import></div>
+<div aria-hidden="true" style="position: absolute; left: 26%; top: 120px"><dc-import name="Ripple" scale="{{k2}}" offset="{{rOff}}" hint-size="48px,24px"></dc-import></div>
+<div aria-hidden="true" style="position: absolute; left: 70%; top: 24px"><dc-import name="Lily" scale="{{k3}}" hint-size="72px,75px"></dc-import></div>
+<div aria-hidden="true" style="position: absolute; left: 46%; top: 30px"><dc-import name="Koi" scale="{{k3}}" variant="kohaku" swim="{{yes}}" hint-size="156px,84px"></dc-import></div>
+<div aria-hidden="true" style="position: absolute; left: 30%; top: 96px; transform: scaleX(-1)"><dc-import name="Koi" scale="{{k1}}" variant="kumonryu" swim="{{yes}}" hint-size="52px,28px"></dc-import></div>
+<div style="position: relative; width: 100%; box-sizing: border-box; padding: 0 32px 22px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'Silkscreen', monospace; font-size: 11px; color: #9FF2DF">ARTIST · FOLLOWING</span>
+<h1 style="margin: 0; font-family: 'Pixelify Sans', monospace; font-size: 52px; font-weight: 700; line-height: 1; text-shadow: 4px 4px 0 #0B1F26">Will Paquin</h1>
+<span style="font-size: 15px; color: #B9D8D1">18 releases · 29 recordings · default destination Server</span>
+</div>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<button aria-pressed="true" class="notch bevel" style="font-family: 'Pixelify Sans', monospace; font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 18px; border: 0; background: #1F5560; color: #9FF2DF; cursor: pointer">Following</button>
+<button class="notch bevel" style="font-family: 'Pixelify Sans', monospace; font-size: 16px; font-weight: 600; min-height: 48px; padding: 0 18px; border: 0; background: #4FE0C1; color: #0B1F26; cursor: pointer">Get 6 missing</button>
+</div>
+</div>
+</header>
+
+<div style="padding: 24px 32px 40px; display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; box-sizing: border-box; width: 100%; max-width: 1280px">
+
+<section aria-label="Releases" style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 6px; align-items: center">
+<button aria-pressed="true" class="notch" style="font-family: 'Silkscreen', monospace; font-size: 11px; min-height: 44px; padding: 0 12px; border: 0; background: #1F5560; color: #9FF2DF; outline: 2px solid #4FE0C1; outline-offset: -2px">ALBUMS</button>
+<button aria-pressed="false" class="notch bevel" style="font-family: 'Silkscreen', monospace; font-size: 11px; min-height: 44px; padding: 0 12px; border: 0; background: #163C46; color: #B9D8D1">EPS</button>
+<button aria-pressed="false" class="notch bevel" style="font-family: 'Silkscreen', monospace; font-size: 11px; min-height: 44px; padding: 0 12px; border: 0; background: #163C46; color: #B9D8D1">SINGLES</button>
+<button aria-pressed="false" class="notch bevel" style="font-family: 'Silkscreen', monospace; font-size: 11px; min-height: 44px; padding: 0 12px; border: 0; background: #163C46; color: #B9D8D1">APPEARS ON</button>
+<button aria-pressed="false" class="notch bevel" style="font-family: 'Silkscreen', monospace; font-size: 11px; min-height: 44px; padding: 0 12px; border: 0; background: #163C46; color: #B9D8D1">VARIANTS</button>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px"><div class="notch cover" style="aspect-ratio: 1; background-color: #2E7A6E; position: relative; outline: 3px solid #4FE0C1; outline-offset: -3px"><span class="notch bevel" style="position: absolute; left: 8px; bottom: 8px; font-family: 'Silkscreen', monospace; font-size: 10px; padding: 4px 8px; background: #4FE0C1; color: #0B1F26">OWNED</span></div><span style="font-size: 15px; font-weight: 700">[Album title]</span><span style="font-family: 'Silkscreen', monospace; font-size: 10px; color: #8FB8B0">ALBUM · FLAC 24/48</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><div class="notch cover" style="aspect-ratio: 1; background-color: #5E8A3C; position: relative"><span class="notch bevel" style="position: absolute; left: 8px; bottom: 8px; font-family: 'Silkscreen', monospace; font-size: 10px; padding: 4px 8px; background: #8AD47A; color: #0B1F26">PARTIAL 7/9</span></div><span style="font-size: 15px; font-weight: 700">[Album title]</span><span style="font-family: 'Silkscreen', monospace; font-size: 10px; color: #8FB8B0">ALBUM · FLAC 16/44.1</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><div class="notch cover" style="aspect-ratio: 1; background-color: #1F5560; position: relative"><span class="notch" style="position: absolute; left: 8px; bottom: 8px; font-family: 'Silkscreen', monospace; font-size: 10px; padding: 4px 8px; background: #0B1F26; color: #DDF3EC; outline: 2px dashed #8FB8B0; outline-offset: -2px">MISSING</span></div><span style="font-size: 15px; font-weight: 700">[EP title]</span><span style="font-family: 'Silkscreen', monospace; font-size: 10px; color: #8FB8B0">EP · ON TIDAL</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><div class="notch cover" style="aspect-ratio: 1; background-color: #A8682A; position: relative"><span class="notch bevel" style="position: absolute; left: 8px; bottom: 8px; font-family: 'Silkscreen', monospace; font-size: 10px; padding: 4px 8px; background: #F4A640; color: #0B1F26">LOSSY · AAC</span></div><span style="font-size: 15px; font-weight: 700">[Single title]</span><span style="font-family: 'Silkscreen', monospace; font-size: 10px; color: #8FB8B0">SINGLE · HELD</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><div class="notch cover" style="aspect-ratio: 1; background-color: #3B6E86; position: relative"><span class="notch bevel" style="position: absolute; left: 8px; bottom: 8px; font-family: 'Silkscreen', monospace; font-size: 10px; padding: 4px 8px; background: #1F5560; color: #9FF2DF">FETCHING</span></div><span style="font-size: 15px; font-weight: 700">[Single title]</span><span style="font-family: 'Silkscreen', monospace; font-size: 10px; color: #8FB8B0">SINGLE · 2/3</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><div class="notch cover" style="aspect-ratio: 1; background-color: #6B5A8A; position: relative"><span class="notch bevel" style="position: absolute; left: 8px; bottom: 8px; font-family: 'Silkscreen', monospace; font-size: 10px; padding: 4px 8px; background: #DDF3EC; color: #0B1F26">ON CARD</span></div><span style="font-size: 15px; font-weight: 700">[Album title]</span><span style="font-family: 'Silkscreen', monospace; font-size: 10px; color: #8FB8B0">ALBUM · FLAC 16/44.1</span></div>
+</div>
+</section>
+
+<aside aria-label="Release detail" class="notch bevel" style="flex: 1 1 340px; min-width: 0; background: #163C46; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; gap: 14px; align-items: center">
+<div class="notch cover" style="width: 88px; height: 88px; flex-shrink: 0; background-color: #2E7A6E"></div>
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+<span style="font-family: 'Silkscreen', monospace; font-size: 10px; color: #4FE0C1">ALBUM · [YEAR]</span>
+<h2 style="margin: 0; font-family: 'Pixelify Sans', monospace; font-size: 24px; font-weight: 600">[Album title]</h2>
+<span style="font-size: 14px; color: #B9D8D1">9 tracks · all owned · on Server</span>
+</div>
+</div>
+<ol style="margin: 0; padding: 0; list-style: none; background: #0F2B33">
+<li class="trk"><span style="font-family: 'Silkscreen', monospace; font-size: 11px; color: #8FB8B0">01</span><span>[Track title]</span><span style="font-family: 'Silkscreen', monospace; font-size: 10px; color: #4FE0C1">FLAC 24/48</span></li>
+<li class="trk"><span style="font-family: 'Silkscreen', monospace; font-size: 11px; color: #8FB8B0">02</span><span>[Track title]</span><span style="font-family: 'Silkscreen', monospace; font-size: 10px; color: #4FE0C1">FLAC 24/48</span></li>
+<li class="trk"><span style="font-family: 'Silkscreen', monospace; font-size: 11px; color: #8FB8B0">03</span><span>[Track title]</span><span style="font-family: 'Silkscreen', monospace; font-size: 10px; color: #8AD47A">FLAC · SOULSEEK</span></li>
+<li class="trk"><span style="font-family: 'Silkscreen', monospace; font-size: 11px; color: #8FB8B0">04</span><span>[Track title]</span><span style="font-family: 'Silkscreen', monospace; font-size: 10px; color: #4FE0C1">FLAC 24/48</span></li>
+<li class="trk"><span style="font-family: 'Silkscreen', monospace; font-size: 11px; color: #8FB8B0">05</span><span>[Track title]</span><span style="font-family: 'Silkscreen', monospace; font-size: 10px; color: #8AD47A">FLAC · ORPHEUS</span></li>
+<li class="trk" style="border-bottom: 0"><span style="font-family: 'Silkscreen', monospace; font-size: 11px; color: #8FB8B0">06</span><span>[Track title]</span><span style="font-family: 'Silkscreen', monospace; font-size: 10px; color: #4FE0C1">FLAC 24/48</span></li>
+</ol>
+<div class="notch" style="background: #0B1F26; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'Silkscreen', monospace; font-size: 10px; color: #8FB8B0">WHY THIS EDITION?</span>
+<span style="font-size: 14px; line-height: 1.45; color: #B9D8D1">Latest remaster is the default. The original stays where it is, never deleted.</span>
+</div>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<button aria-pressed="true" class="notch" style="font-family: 'Silkscreen', monospace; font-size: 11px; min-height: 44px; padding: 0 12px; border: 0; background: #1F5560; color: #9FF2DF; outline: 2px solid #4FE0C1; outline-offset: -2px">SERVER</button>
+<button aria-pressed="false" class="notch" style="font-family: 'Silkscreen', monospace; font-size: 11px; min-height: 44px; padding: 0 12px; border: 0; background: #0B1F26; color: #B9D8D1">FIIO</button>
+<button aria-pressed="false" class="notch" style="font-family: 'Silkscreen', monospace; font-size: 11px; min-height: 44px; padding: 0 12px; border: 0; background: #0B1F26; color: #B9D8D1">BOTH</button>
+<a href="#history" style="margin-left: auto; align-self: center; font-size: 14px">History</a>
+</div>
+</aside>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1080}}'>
+class Component extends DCLogic {
+renderVals() {
+return { k1: 1, k2: 2, k3: 3, k5: 5, rOff: 1.2, yes: true };
+}
+}
+</script>
+</body>
+</html>
